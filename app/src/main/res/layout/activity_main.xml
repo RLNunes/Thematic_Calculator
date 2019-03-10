@@ -106,7 +106,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Operand_Result" />
+        app:layout_constraintTop_toBottomOf="@id/Operand_Result"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/Operand2"
@@ -144,7 +145,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Operand2" />
+        app:layout_constraintTop_toBottomOf="@id/Operand2"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/button1"

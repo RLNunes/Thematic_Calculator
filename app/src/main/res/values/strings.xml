@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">Thematic Calculator</string>
     <string name="title_text">Select Your Team</string>
-    <string name="benfica">Benfica</string>
-    <string name="porto">Porto</string>
-    <string name="sporting">Sporting</string>
+    <string name="benfica" translatable="false">Benfica</string>
+    <string name="porto" translatable="false">Porto</string>
+    <string name="sporting" translatable="false">Sporting</string>
     <string name="operand_1_and_result">Operand 1, (And Result)</string>
     <string name="operand_2">Operand 2</string>
-    <string name="addition">+</string>
-    <string name="subtraction">-</string>
-    <string name="multiplication">*</string>
-    <string name="division">/</string>
+    <string name="addition" translatable="false">+</string>
+    <string name="subtraction" translatable="false">-</string>
+    <string name="multiplication" translatable="false">*</string>
+    <string name="division" translatable="false">/</string>
+    <string name="app_name">Thematic Calculator</string>
 </resources>

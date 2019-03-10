@@ -7,10 +7,5 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    
-    <style name="Benfica">
-        <item name="colorPrimary">@color/Benfica</item>
-        <item name="colorAccent">#ffff</item>
-    </style>
 
 </resources>

@@ -93,8 +93,6 @@ public class MainActivity extends AppCompatActivity {
         changeTextView(R.id.Operand2, R.color.Benfica);
         changeEditView(R.id.edit_text2, R.color.Benfica);
         changeButtons(R.color.Benfica);
-
-        setTheme(R.style.Benfica);
     }
 
     public void setPorto(View view) {
