@@ -28,11 +28,6 @@ public class MainActivity extends AppCompatActivity {
         calculator = new Calculator();
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
     public void addition(View view) {
         editText1.setText(
                 calculator.addition(editText1.getText().toString(), editText2.getText().toString())
