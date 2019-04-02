@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora tematica</string>
+    <string name="title_text">Elige tu equipo</string>
+    <string name="operand_1_and_result">Operando 1, (Y Resultado)</string>
+    <string name="operand_2">Operando 2</string>
+    <string name="escolhe_um_pokemon">Elige un Pokemon</string>
+</resources>

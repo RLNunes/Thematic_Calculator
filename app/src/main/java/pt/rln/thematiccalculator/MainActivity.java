@@ -1,6 +1,7 @@
 package pt.rln.thematiccalculator;
 
-import android.support.v4.content.ContextCompat;
+import android.app.Activity;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,60 +13,99 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText editText1, editText2;
     private View container;
+    private Calculator calculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         editText2 = findViewById(R.id.edit_text2);
         editText1 = findViewById(R.id.edit_text1);
         container = findViewById(R.id.container);
-
+        calculator = new Calculator();
     }
 
-    private double getDouble(String s){
-        return Double.parseDouble(s);
+    @Override
+    protected void onRestart() {
+        super.onRestart();
     }
 
     public void addition(View view) {
-        String s1 = editText1.getText().toString();
-        String s2 = editText2.getText().toString();
-
-        double value = getDouble(s1) + getDouble(s2);
-        editText1.setText(Double.toString(value));
+        editText1.setText(
+                calculator.addition(editText1.getText().toString(), editText2.getText().toString())
+        );
     }
 
     public void subtraction(View view) {
-        String s1 = editText1.getText().toString();
-        String s2 = editText2.getText().toString();
-
-        double value = getDouble(s1) - getDouble(s2);
-        editText1.setText(Double.toString(value));
+        editText1.setText(
+                calculator.subtraction(editText1.getText().toString(), editText2.getText().toString())
+        );
     }
 
     public void multiplication(View view) {
-        String s1 = editText1.getText().toString();
-        String s2 = editText2.getText().toString();
-
-        double value = getDouble(s1) * getDouble(s2);
-        editText1.setText(Double.toString(value));
+        editText1.setText(
+                calculator.multiplication(editText1.getText().toString(), editText2.getText().toString())
+        );
     }
 
     public void division(View view) {
-        String s1 = editText1.getText().toString();
-        String s2 = editText2.getText().toString();
-
-        double value = getDouble(s1) / getDouble(s2);
-        editText1.setText(Double.toString(value));
+        editText1.setText(
+                calculator.division(editText1.getText().toString(), editText2.getText().toString())
+        );
     }
 
-    private void changeTextView(int View, int color){
+    public void square_root(View view) {
+        editText1.setText(
+                calculator.square_root(editText1.getText().toString())
+        );
+    }
+
+    public void exponential(View view){
+
+        editText1.setText(
+                calculator.exponential(editText1.getText().toString())
+        );
+
+    }
+
+    public void setFire(View view) {
+
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            container.setBackgroundResource(R.drawable.charmander_wp_h);
+        } else {
+            container.setBackgroundResource(R.drawable.charmander_wp_l);
+        }
+
+        updateViews(R.color.Fire);
+    }
+
+    public void setWater(View view) {
+
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            container.setBackgroundResource(R.drawable.squirtle_wp_h);
+        }else {
+            container.setBackgroundResource(R.drawable.squirtle_wp_l);
+        }
+
+
+        updateViews(R.color.Water);
+    }
+
+    public void setGrass(View view) {
+        container.setBackgroundResource(R.drawable.bulbasaur);
+
+        updateViews(R.color.Grass);
+    }
+
+    private void changeTextView(int View, int color) {
         TextView textView = findViewById(View);
         textView.setTextColor(getResources().getColor(color));
     }
 
-    private void changeEditView(int View, int color){
+    private void changeEditView(int View, int color) {
         TextView editView = findViewById(View);
         editView.setBackgroundColor(getResources().getColor(color));
     }
@@ -75,50 +115,25 @@ public class MainActivity extends AppCompatActivity {
         Button button2 = findViewById(R.id.button2);
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
+        Button button5 = findViewById(R.id.button5);
+        Button button6 = findViewById(R.id.button6);
 
         button1.setTextColor(getResources().getColor(color));
         button2.setTextColor(getResources().getColor(color));
         button3.setTextColor(getResources().getColor(color));
         button4.setTextColor(getResources().getColor(color));
+        button5.setTextColor(getResources().getColor(color));
+        button6.setTextColor(getResources().getColor(color));
     }
 
-    public void setBenfica(View view) {
-        container.setBackgroundResource(R.drawable.estadio_da_luz);
-
+    private void updateViews(int color) {
         TextView title = findViewById(R.id.title);
-        title.setTextColor(getResources().getColor(R.color.Benfica));
+        title.setTextColor(getResources().getColor(color));
 
-        changeTextView(R.id.Operand_Result, R.color.Benfica);
-        changeEditView(R.id.edit_text1, R.color.Benfica);
-        changeTextView(R.id.Operand2, R.color.Benfica);
-        changeEditView(R.id.edit_text2, R.color.Benfica);
-        changeButtons(R.color.Benfica);
-    }
-
-    public void setPorto(View view) {
-        container.setBackgroundResource(R.drawable.estadio_do_dragao);
-
-        TextView title = findViewById(R.id.title);
-        title.setTextColor(getResources().getColor(R.color.Porto));
-
-        changeTextView(R.id.Operand_Result, R.color.Porto);
-        changeEditView(R.id.edit_text1, R.color.Porto);
-        changeTextView(R.id.Operand2, R.color.Porto);
-        changeEditView(R.id.edit_text2, R.color.Porto);
-        changeButtons(R.color.Porto);
-        setTheme(R.style.AppTheme);
-    }
-
-    public void setSporting(View view) {
-        container.setBackgroundResource(R.drawable.estadio_de_alvalade);
-
-        TextView title = findViewById(R.id.title);
-        title.setTextColor(getResources().getColor(R.color.Sporting));
-
-        changeTextView(R.id.Operand_Result, R.color.Sporting);
-        changeEditView(R.id.edit_text1, R.color.Sporting);
-        changeTextView(R.id.Operand2, R.color.Sporting);
-        changeEditView(R.id.edit_text2, R.color.Sporting);
-        changeButtons(R.color.Sporting);
+        changeTextView(R.id.Operand_Result, color);
+        changeEditView(R.id.edit_text1, color);
+        changeTextView(R.id.Operand2, color);
+        changeEditView(R.id.edit_text2, color);
+        changeButtons(color);
     }
 }

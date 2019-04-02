@@ -1,8 +1,4 @@
 <resources>
-    <string name="title_text">Select Your Team</string>
-    <string name="benfica" translatable="false">Benfica</string>
-    <string name="porto" translatable="false">Porto</string>
-    <string name="sporting" translatable="false">Sporting</string>
     <string name="operand_1_and_result">Operand 1, (And Result)</string>
     <string name="operand_2">Operand 2</string>
     <string name="addition" translatable="false">+</string>
@@ -10,4 +6,10 @@
     <string name="multiplication" translatable="false">*</string>
     <string name="division" translatable="false">/</string>
     <string name="app_name">Thematic Calculator</string>
+    <string name="exponential" translatable="false">exp</string>
+    <string name="square_root" translatable="false">√</string>
+    <string name="escolhe_um_pokemon">Choose your starter</string>
+    <string name="charmander" translatable="false">charmander</string>
+    <string name="bulbasaur" translatable="false">bulbasaur</string>
+    <string name="squirtle" translatable="false">squirtle</string>
 </resources>
