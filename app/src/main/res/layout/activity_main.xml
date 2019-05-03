@@ -18,7 +18,7 @@
         android:layout_marginRight="8dp"
         android:text="@string/escolhe_um_pokemon"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:textColorLink="@android:color/black"
+        android:textColorLink="@color/Fire"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"

@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     public void setWater(View view) {
 
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            container.setBackgroundResource(R.drawable.squirtle_wp_h);
+            container.setBackgroundResource(R.drawable.squirtle_wp_h2);
         }else {
             container.setBackgroundResource(R.drawable.squirtle_wp_l);
         }
@@ -90,8 +90,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setGrass(View view) {
-        container.setBackgroundResource(R.drawable.bulbasaur);
-
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            container.setBackgroundResource(R.drawable.bulbasaur_wp_h);
+        }else {
+            container.setBackgroundResource(R.drawable.bulbasaur_wp_l);
+        }
         updateViews(R.color.Grass);
     }
 
